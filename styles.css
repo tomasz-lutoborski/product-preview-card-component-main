@@ -1,0 +1,72 @@
+:root {
+    --color-primary-dark: hsl(158, 36%, 37%);
+    --color-primary-light: hsl(30, 38%, 92%);
+
+    --color-secondary-very-dark: hsl(212, 21%, 14%);
+    --color-secondary-dark: hsl(228, 12%, 48%);
+    --color-secondary-white: hsl(0, 0%, 100%);
+
+    --serif: 'Fraunces', serif;
+    --sans-serif: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100vh;
+}
+
+body {
+    font-family: var(--serif);
+    font-family: var(--sans-serif);
+    background-color: var(--color-primary-light);
+    margin: 0;
+    height: 100%;
+}
+
+.card {
+    height: auto;
+    width: 40%;
+    background-color: var(--color-secondary-white);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-photo {
+    flex: 1;
+    background-image: url('./images/image-product-desktop.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card-photo__img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-text__name {
+    font-size: 1.5rem;
+    font-family: 'Fraunces', serif;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+.attribution {
+    height: auto;
+    font-size: 1.2rem;
+    color: var(--color-secondary-very-dark);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
