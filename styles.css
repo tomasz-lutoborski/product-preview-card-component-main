@@ -19,6 +19,7 @@ html {
     height: 100vh;
 }
 
+
 body {
     font-family: var(--serif);
     font-family: var(--sans-serif);
@@ -28,7 +29,7 @@ body {
 }
 
 .card {
-    height: auto;
+    height: 50%;
     width: 40%;
     background-color: var(--color-secondary-white);
     display: flex;
@@ -37,12 +38,14 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .card-photo {
-    flex: 1;
+    width: 50%;
     background-image: url('./images/image-product-desktop.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -52,14 +55,65 @@ body {
 }
 
 .card-text {
-    flex: 1;
+    width: 50%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text__title {
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-secondary-dark);
 }
 
 .card-text__name {
+    font-size: 3.5rem;
+    font-family: var(--serif);
+    color: var(--color-secondary-very-dark);
+}
+
+.card-text__description {
     font-size: 1.5rem;
-    font-family: 'Fraunces', serif;
-    font-weight: bold;
+    font-family: var(--sans-serif);
+    color: var(--color-secondary-dark);
+    margin-bottom: 1rem;
+}
+
+.card-text__price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-text__price--current {
+    font-size: 2.5rem;
+    font-family: var(--serif);
     color: var(--color-primary-dark);
+}
+
+.card-text__price--last {
+    font-size: 1.5rem;
+    font-family: var(--sans-serif);
+    color: var(--color-secondary-dark);
+    text-decoration: line-through;
+}
+
+.card-text__button {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary-dark);
+    color: var(--color-secondary-white);
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+.card-text__button>p {
+    margin-left: 1.5rem;
 }
 
 .attribution {
@@ -69,4 +123,45 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+@media (max-width: 1350px) {
+    .card {
+        width: 60%;
+    }
+
+    .card-text {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 50%;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 390px) {
+    html {
+        font-size: 40%;
+    }
+
+    .card {
+        width: 90%;
+        height: 90%;
+        flex-direction: column;
+    }
+
+    .card-photo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-text {
+        width: 100%;
+    }
 }
